@@ -1,6 +1,10 @@
 ### IOTZHY
 #### 第一次SpringBoot的尝试
 ###  资料
-[spring教程](https://spring.io/guides)
+[Spring教程](https://spring.io/guides)
 
-[bootstrap](https://v3.bootcss.com/)
+[Bootstrap](https://v3.bootcss.com/)
+
+[Github授权登录](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
+
+[OkHttp](https://square.github.io/okhttp/)
