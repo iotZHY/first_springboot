@@ -8,3 +8,7 @@
 [Github授权登录](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
 
 [OkHttp](https://square.github.io/okhttp/)
+
+[Flyway](https://flywaydb.org/)
+
+[Lombok](https://projectlombok.org/)

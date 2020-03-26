@@ -31,7 +31,7 @@ public class AuthorizeController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("callback")
+    @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
                            HttpServletResponse response){
@@ -52,6 +52,7 @@ public class AuthorizeController {
             user.setToken(token_cookie);
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             userMapper.insert(user);
             //添加cookie
             response.addCookie(new Cookie("token",token_cookie));

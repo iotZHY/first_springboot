@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class IndexController {
+
     @Autowired
     private UserMapper userMapper;
 
@@ -19,12 +20,14 @@ public class IndexController {
     public String index(HttpServletRequest request){
         //取出cookie中的token与数据库中对比，保证用户的登录态
         Cookie[] cookies = request.getCookies();
-        for(Cookie cookie:cookies){
-            if("token".equals(cookie.getName())){
-                String token = cookie.getValue();
-                User user = userMapper.findByToken(token);
-                if(user != null){
-                    request.getSession().setAttribute("user",user);
+        if(cookies!=null){
+            for(Cookie cookie:cookies){
+                if("token".equals(cookie.getName())){
+                    String token = cookie.getValue();
+                    User user = userMapper.findByToken(token);
+                    if(user != null){
+                        request.getSession().setAttribute("user",user);
+                    }
                 }
             }
         }
